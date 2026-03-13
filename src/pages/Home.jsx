@@ -20,6 +20,45 @@ export default function Home() {
     <>
       <PremiumHero profileImage={profileImg} />
 
+      <section className="border-b border-[var(--color-border)] bg-[var(--color-bg-elevated)]/30 px-4 py-16 md:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            title="Coding Profiles"
+            subtitle="Practice and problem-solving across competitive programming platforms."
+            align="center"
+          />
+          <div className="grid gap-6 sm:grid-cols-3">
+            {codingProfiles.map(({ label, href, logo, username }, i) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ delay: i * 0.08 }}
+                className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center transition-all hover:border-[var(--color-cyan)]/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]"
+              >
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity group-hover:opacity-100"
+                  style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.2), transparent)' }}
+                  aria-hidden
+                />
+                <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-3 transition-transform group-hover:scale-105 md:h-24 md:w-24">
+                  <img src={logo} alt={label} className="h-full w-full object-contain" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-[var(--color-text)]">{label}</h3>
+                <p className="mt-1 text-sm text-[var(--color-text-muted)]">@{username}</p>
+                <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-cyan)] transition-colors group-hover:text-[var(--color-accent)]">
+                  View Profile <ExternalLink size={14} />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 py-16 md:px-6 md:py-20" id="featured">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
@@ -121,45 +160,6 @@ export default function Home() {
             >
               Full experience →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-[var(--color-border)] px-4 py-16 md:px-6 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeader
-            title="Coding Profiles"
-            subtitle="Practice and problem-solving across competitive programming platforms."
-            align="center"
-          />
-          <div className="grid gap-6 sm:grid-cols-3">
-            {codingProfiles.map(({ label, href, logo, username }, i) => (
-              <motion.a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ delay: i * 0.08 }}
-                className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center transition-all hover:border-[var(--color-cyan)]/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]"
-              >
-                <div
-                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity group-hover:opacity-100"
-                  style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.2), transparent)' }}
-                  aria-hidden
-                />
-                <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-3 transition-transform group-hover:scale-105 md:h-24 md:w-24">
-                  <img src={logo} alt={label} className="h-full w-full object-contain" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-[var(--color-text)]">{label}</h3>
-                <p className="mt-1 text-sm text-[var(--color-text-muted)]">@{username}</p>
-                <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-cyan)] transition-colors group-hover:text-[var(--color-accent)]">
-                  View Profile <ExternalLink size={14} />
-                </div>
-              </motion.a>
-            ))}
           </div>
         </div>
       </section>
