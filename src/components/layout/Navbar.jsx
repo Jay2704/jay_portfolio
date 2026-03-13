@@ -8,6 +8,7 @@ import MobileMenu from '../ui/MobileMenu'
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
+  const visibleNavLinks = navLinks.filter(({ path, label }) => path !== '/' && label !== 'Home')
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-900/70 backdrop-blur-md">
@@ -22,7 +23,7 @@ export default function Navbar() {
           Jay
         </Link>
         <ul className="hidden list-none items-center gap-2 md:flex">
-          {navLinks.map(({ path, label }) => {
+          {visibleNavLinks.map(({ path, label }) => {
             const isActive =
               location.pathname === path || (path !== '/' && location.pathname.startsWith(path))
             return (

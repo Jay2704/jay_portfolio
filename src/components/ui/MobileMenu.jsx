@@ -5,6 +5,7 @@ import { navLinks, resumeUrl } from '../../data/navigation'
 
 export default function MobileMenu({ onClose }) {
   const location = useLocation()
+  const visibleNavLinks = navLinks.filter(({ path, label }) => path !== '/' && label !== 'Home')
 
   return (
     <motion.div
@@ -26,7 +27,7 @@ export default function MobileMenu({ onClose }) {
           <X size={20} />
         </button>
         <nav className="flex flex-1 flex-col gap-2" aria-label="Mobile navigation">
-          {navLinks.map(({ path, label }) => {
+          {visibleNavLinks.map(({ path, label }) => {
             const isActive =
               location.pathname === path || (path !== '/' && location.pathname.startsWith(path))
             return (
