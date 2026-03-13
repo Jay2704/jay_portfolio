@@ -1,3 +1,6 @@
+import umbcLogo from '../assets/UMBC.png'
+import bmsLogo from '../assets/BMS.svg'
+
 export const heroData = {
   name: 'Jay Paun',
   title: 'Software Developer + AI Engineer',
@@ -56,11 +59,13 @@ export const education = [
     school: 'University of Maryland, Baltimore County (UMBC)',
     location: 'Baltimore, MD',
     duration: 'Aug 2023 – May 2025',
+    logo: umbcLogo,
   },
   {
     degree: 'B.E. in Information Science',
     school: 'B.M.S. College of Engineering (B.M.S.C.E)',
     location: 'Bangalore, India',
     duration: 'Aug 2018 – May 2022',
+    logo: bmsLogo,
   },
 ]

@@ -50,14 +50,25 @@ export default function About() {
                 {education.map((edu, i) => (
                   <div
                     key={i}
-                    className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-4"
+                    className="flex gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-4 transition-colors hover:border-[var(--color-accent)]/30"
                   >
-                    <p className="font-medium text-[var(--color-text)]">{edu.degree}</p>
-                    <p className="mt-1 text-sm text-[var(--color-accent)]">{edu.school}</p>
-                    <div className="mt-2 flex flex-wrap gap-3 text-xs text-[var(--color-text-muted)]">
-                      <span>{edu.location}</span>
-                      <span>•</span>
-                      <span>{edu.duration}</span>
+                    {edu.logo && (
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+                        <img
+                          src={edu.logo}
+                          alt={`${edu.school} logo`}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1">
+                      <p className="font-medium text-[var(--color-text)]">{edu.degree}</p>
+                      <p className="mt-1 text-sm text-[var(--color-accent)]">{edu.school}</p>
+                      <div className="mt-2 flex flex-wrap gap-3 text-xs text-[var(--color-text-muted)]">
+                        <span>{edu.location}</span>
+                        <span>•</span>
+                        <span>{edu.duration}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
