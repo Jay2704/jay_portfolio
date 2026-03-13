@@ -1,14 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react'
 import { navLinks } from '../../data/navigation'
-import { contactInfo } from '../../data/contact'
-
-const social = [
-  { icon: Github, label: 'GitHub', href: contactInfo.github },
-  { icon: Linkedin, label: 'LinkedIn', href: contactInfo.linkedIn },
-  { icon: Code2, label: 'LeetCode', href: contactInfo.leetcode },
-  { icon: Mail, label: 'Email', href: `mailto:${contactInfo.email}` },
-]
+import { contactInfo, socialLinks } from '../../data/contact'
 
 export default function Footer() {
   return (
@@ -24,16 +16,16 @@ export default function Footer() {
             </p>
             <p className="mt-2 text-xs text-[var(--color-text-muted)]/80">{contactInfo.location}</p>
             <div className="mt-4 flex gap-3">
-              {social.map(({ icon: Icon, label, href }) => (
+              {socialLinks.map(({ label, href, logo }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-1.5 transition-all hover:border-[var(--color-accent)] hover:scale-110"
                   aria-label={label}
                 >
-                  <Icon size={18} />
+                  <img src={logo} alt={label} className="h-full w-full object-contain" />
                 </a>
               ))}
             </div>

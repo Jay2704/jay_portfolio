@@ -1,17 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Github, Linkedin, Mail, FileDown, Code2 } from 'lucide-react'
+import { ArrowRight, FileDown } from 'lucide-react'
 import AnimatedBackground from './AnimatedBackground'
 import ProfileImageCard from './ProfileImageCard'
 import { heroData } from '../../data/hero'
-import { contactInfo } from '../../data/contact'
-
-const socialLinks = [
-  { icon: Github, label: 'GitHub', href: contactInfo.github },
-  { icon: Linkedin, label: 'LinkedIn', href: contactInfo.linkedIn },
-  { icon: Code2, label: 'LeetCode', href: contactInfo.leetcode },
-  { icon: Mail, label: 'Email', href: `mailto:${contactInfo.email}` },
-]
+import { socialLinks } from '../../data/contact'
 
 export default function PremiumHero({ profileImage }) {
   return (
@@ -128,18 +121,18 @@ export default function PremiumHero({ profileImage }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45 }}
-            className="mt-8 flex justify-center gap-5 md:justify-start"
+            className="mt-8 flex justify-center gap-4 md:justify-start"
           >
-            {socialLinks.map(({ icon: Icon, label, href }) => (
+            {socialLinks.map(({ label, href, logo }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 p-2 transition-all hover:border-[var(--color-accent)] hover:scale-110 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
                 aria-label={label}
               >
-                <Icon size={20} />
+                <img src={logo} alt={label} className="h-full w-full object-contain" />
               </a>
             ))}
           </motion.div>
