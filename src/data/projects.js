@@ -1,3 +1,10 @@
+import pp1 from '../assets/pp1.png'
+import pp2 from '../assets/pp2.png'
+import pp3 from '../assets/pp3.png'
+import pp4 from '../assets/pp4.png'
+import pp5 from '../assets/pp5.png'
+import pp6 from '../assets/pp6.png'
+
 export const projectCategories = ['AI / ML', 'Full Stack', 'Developer Tools']
 
 export const projects = [
@@ -6,7 +13,7 @@ export const projects = [
     title: 'Brain Tumor Detection using Deep Learning',
     description: 'End-to-end medical AI application that detects brain tumor types from MRI scans using a VGG-based CNN, with a React frontend and cloud inference on Hugging Face.',
     category: 'AI / ML',
-    image: null,
+    image: pp4,
     techStack: ['React', 'TensorFlow', 'CNN (VGGNet)', 'Hugging Face Spaces', 'Gradio', 'Python'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: 'https://huggingface.co/spaces/Jay2704',
@@ -28,7 +35,7 @@ export const projects = [
     title: 'Fine-Tuning LLaMA 2 with QLoRA',
     description: 'Applied QLoRA techniques to fine-tune LLaMA 2–7B with 4-bit quantization, reducing GPU memory by 60% while preserving 95% task-specific accuracy.',
     category: 'AI / ML',
-    image: null,
+    image: pp6,
     techStack: ['Python', 'Hugging Face', 'Google Colab', 'QLoRA', 'LLaMA 2'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
@@ -44,7 +51,7 @@ export const projects = [
     title: 'AI Log Analysis Agent',
     description: 'Designed an AI-powered log analysis agent using n8n and LLaMA to automatically parse logs, isolate stack traces, and predict anomalies.',
     category: 'AI / ML',
-    image: null,
+    image: pp1,
     techStack: ['Python', 'n8n', 'LLaMA', 'Embeddings', 'Automation'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
@@ -60,7 +67,7 @@ export const projects = [
     title: 'AstroVoyages – GenAI Astrology Platform',
     description: 'Built an AI-assisted astrology platform integrating LLMs for personalized insights, deployed across web and mobile.',
     category: 'Full Stack',
-    image: null,
+    image: pp2,
     techStack: ['React Native', 'Node.js', 'Azure', 'LLMs', 'GenAI'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
@@ -76,7 +83,7 @@ export const projects = [
     title: 'PyBot – Machine Learning Chatbot',
     description: 'ML-powered chatbot using NLP techniques, improving intent recognition accuracy by 25% with containerized deployment.',
     category: 'AI / ML',
-    image: null,
+    image: pp3,
     techStack: ['Python', 'TensorFlow', 'NLP', 'Docker'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
@@ -92,7 +99,7 @@ export const projects = [
     title: 'Multimodal Lie Detection System',
     description: 'Research project combining EEG signals and visual data for lie detection with 89% accuracy, applicable to healthcare and HCI.',
     category: 'AI / ML',
-    image: null,
+    image: pp5,
     techStack: ['Python', 'PyTorch', 'EEG Processing', 'Computer Vision', 'Deep Learning'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
