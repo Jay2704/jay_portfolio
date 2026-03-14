@@ -2,9 +2,10 @@ import { motion } from 'framer-motion'
 import SkillBadge from './SkillBadge'
 
 const defaultAccent = {
+  cardBg: 'bg-white',
   cardBorder: 'border-[var(--color-border)]',
   cardHoverBorder: 'hover:border-[var(--color-border-focus)]',
-  cardHoverShadow: '',
+  cardHoverShadow: 'hover:shadow-md',
   titleClass: 'text-[var(--color-text)]/95',
   accentBg: 'bg-teal-500/10',
   accentText: 'text-teal-700',
@@ -21,7 +22,7 @@ export default function SkillCategoryCard({ name, items, index = 0, icon: Icon, 
       viewport={{ once: true, margin: '-30px' }}
       transition={{ delay: index * 0.05 }}
       whileHover={{ y: -2 }}
-      className={`surface-card surface-card-hover p-6 ${activeAccent.cardBorder} ${activeAccent.cardHoverBorder} ${activeAccent.cardHoverShadow}`}
+      className={`rounded-2xl border p-6 shadow-sm transition ${activeAccent.cardBg} ${activeAccent.cardBorder} ${activeAccent.cardHoverBorder} ${activeAccent.cardHoverShadow}`}
     >
       <div className="mb-4 flex items-center gap-3">
         {Icon && (
