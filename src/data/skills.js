@@ -28,3 +28,36 @@ export const skillCategories = [
     items: ['Git', 'GitHub', 'n8n', 'JIRA', 'Tableau', 'Agile/Scrum', 'System Design'],
   },
 ]
+
+export const softSkills = [
+  {
+    title: 'Technical Storytelling',
+    description:
+      'Ability to explain complex technical concepts clearly to non-technical stakeholders.',
+    icon: 'communication',
+  },
+  {
+    title: 'Debugging Mindset',
+    description:
+      'Systematic, hypothesis-driven approach to diagnosing and solving complex problems.',
+    icon: 'brain',
+  },
+  {
+    title: 'Learning Agility',
+    description:
+      'Quickly adapting to new technologies, frameworks, and development environments.',
+    icon: 'learning',
+  },
+  {
+    title: 'Cross-Functional Collaboration',
+    description:
+      'Working effectively with product managers, designers, and engineers to deliver solutions.',
+    icon: 'team',
+  },
+  {
+    title: 'Feedback Receptivity',
+    description:
+      'Actively incorporating feedback from code reviews and teammates to improve work quality.',
+    icon: 'feedback',
+  },
+]

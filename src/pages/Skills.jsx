@@ -1,6 +1,7 @@
 import SectionHeader from '../components/ui/SectionHeader'
 import SkillCategoryCard from '../components/ui/SkillCategoryCard'
-import { skillCategories } from '../data/skills'
+import { MessageSquareText, Brain, GraduationCap, Users, MessageCircleReply } from 'lucide-react'
+import { skillCategories, softSkills } from '../data/skills'
 
 const categoryAccents = {
   Languages: {
@@ -117,6 +118,14 @@ const categoryAccents = {
   },
 }
 
+const softSkillIcons = {
+  communication: MessageSquareText,
+  brain: Brain,
+  learning: GraduationCap,
+  team: Users,
+  feedback: MessageCircleReply,
+}
+
 export default function Skills() {
   return (
     <>
@@ -137,6 +146,34 @@ export default function Skills() {
                 accent={categoryAccents[category.name]}
               />
             ))}
+          </div>
+
+          <div className="mt-12 md:mt-14">
+            <div className="mb-6 text-center">
+              <h2 className="font-heading text-2xl font-semibold text-[var(--color-text)] md:text-3xl">
+                Soft Skills
+              </h2>
+              <p className="mx-auto mt-2 max-w-2xl text-sm text-[var(--color-text-muted)] md:text-base">
+                Interpersonal strengths that support strong engineering execution and team impact.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {softSkills.map((skill) => {
+                const Icon = softSkillIcons[skill.icon]
+                return (
+                  <article
+                    key={skill.title}
+                    className="rounded-xl border border-[var(--color-border)] bg-white p-4 shadow-sm transition hover:shadow-md"
+                  >
+                    <h3 className="flex items-center gap-2 font-semibold text-gray-800">
+                      {Icon && <Icon size={16} className="text-[var(--color-accent)]" aria-hidden />}
+                      {skill.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-600">{skill.description}</p>
+                  </article>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
