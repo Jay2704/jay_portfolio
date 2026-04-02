@@ -41,15 +41,17 @@ export default function PremiumHero({ profileImage }) {
             transition={{ delay: 0.12, duration: 0.5 }}
             className="relative z-10 mt-3 text-lg font-medium text-[var(--color-cyan)] md:text-xl"
           >
-            {heroData.title}
+            {heroData.subtitle ?? heroData.title}
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="relative z-10 mt-4 max-w-xl text-base leading-relaxed text-[var(--color-text-muted)] md:text-lg"
+            className="relative z-10 mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] md:text-lg"
           >
-            {heroData.tagline} {heroData.summary}
+            {heroData.tagline
+              ? `${heroData.tagline} ${heroData.summary}`
+              : heroData.summary}
           </motion.p>
 
           <motion.div

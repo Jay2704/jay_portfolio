@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionHeader from '../components/ui/SectionHeader'
 import { contactInfo } from '../data/contact'
+import { heroData } from '../data/hero'
 import githubIcon from '../assets/icons/github.svg'
 import leetcodeIcon from '../assets/leetcode.png'
 import codeforcesIcon from '../assets/codeforces.png'
@@ -8,13 +9,6 @@ import codechefIcon from '../assets/codechef.avif'
 import linkedinIcon from '../assets/icons/linkedin.svg'
 
 export default function About() {
-  const summaryParagraphs = [
-    "I am a Software Engineer and AI researcher focused on building intelligent and scalable systems. My work combines machine learning, cloud infrastructure, and full stack development to create production ready applications that solve real world problems.",
-    "My technical experience spans Python, JavaScript, React, Node.js, machine learning frameworks, and cloud platforms including AWS and Azure. I enjoy designing systems that integrate AI models with reliable backend architectures and modern user interfaces.",
-    "I have worked with organizations such as JPMorgan Chase and Capgemini, where I have delivered end-to-end ML systems—from credit risk and fraud detection to demand forecasting and NLP pipelines—across AWS, Azure, and Snowflake. These experiences strengthened my ability to ship models that are measurable, governed, and aligned with business impact.",
-    "Beyond technical development, I bring a leadership mindset to engineering. I focus on understanding problems deeply, collaborating across teams, and delivering solutions that create real impact. I enjoy taking ownership of projects from idea to deployment and continuously improving systems based on feedback and performance."
-  ]
-
   const codingProfiles = [
     { label: 'GitHub', href: contactInfo.github, icon: githubIcon },
     { label: 'LeetCode', href: contactInfo.leetcode, icon: leetcodeIcon },
@@ -28,7 +22,7 @@ export default function About() {
       <SectionHeader
         variant="compact"
         title="About"
-        subtitle="Professional background and coding profiles."
+        subtitle="Professional summary and coding profiles."
       />
       <section className="section-padding">
         <div className="site-container">
@@ -39,15 +33,11 @@ export default function About() {
           >
             <div className="max-w-2xl lg:pr-4">
               <h2 className="font-heading text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">
-                About Me
+                Professional summary
               </h2>
-              <div className="mt-6 space-y-5 text-[var(--color-text-muted)]">
-                {summaryParagraphs.map((p, i) => (
-                  <p key={i} className="max-w-prose leading-7">
-                    {p}
-                  </p>
-                ))}
-              </div>
+              <p className="mt-6 max-w-prose text-[var(--color-text-muted)] leading-7">
+                {heroData.summary}
+              </p>
             </div>
 
             <div className="surface-card p-5 md:p-6">

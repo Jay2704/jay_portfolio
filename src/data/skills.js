@@ -1,31 +1,69 @@
 export const skillCategories = [
   {
-    name: 'Languages',
-    items: ['Python', 'JavaScript', 'Java', 'HTML', 'CSS', 'Shell Scripting'],
+    name: 'Programming & Querying',
+    items: ['Python (Pandas, NumPy, Scikit-learn)', 'SQL', 'R'],
   },
   {
-    name: 'Frontend',
-    items: ['React.js', 'React Native', 'HTML/CSS', 'Tailwind CSS'],
+    name: 'Machine Learning & AI',
+    items: [
+      'Supervised/Unsupervised Learning',
+      'XGBoost',
+      'LightGBM',
+      'Random Forest',
+      'SVM',
+      'Deep Learning (PyTorch, TensorFlow, Transformers, BERT, LoRA / Fine-tuning)',
+    ],
   },
   {
-    name: 'Backend',
-    items: ['Node.js', 'Flask', 'REST APIs', 'Express'],
+    name: 'Generative AI & LLMs',
+    items: [
+      'LLM Fine-tuning (LoRA, QLoRA)',
+      'Prompt Engineering',
+      'RAG Pipelines',
+      'LangChain',
+      'Agentic AI',
+      'Vector Databases (Pinecone, FAISS)',
+      'Llama',
+    ],
   },
   {
-    name: 'AI / ML',
-    items: ['PyTorch', 'TensorFlow', 'LangChain', 'LLaMA', 'Hugging Face', 'QLoRA/LoRA', 'OpenCV', 'NLP', 'Embeddings', 'Prompt Engineering', 'Agentic AI'],
+    name: 'NLP & Time Series',
+    items: ['spaCy', 'NLTK', 'NER', 'Sentiment Analysis', 'ARIMA', 'GARCH', 'LSTM', 'Forecasting'],
   },
   {
-    name: 'Cloud / DevOps',
-    items: ['AWS (EC2, S3, Lambda, SageMaker)', 'Docker', 'Jenkins', 'Ansible', 'Prometheus', 'Grafana', 'CI/CD'],
+    name: 'Statistical & Quant Modeling',
+    items: [
+      'Hypothesis Testing',
+      'A/B Testing',
+      'Bayesian Inference',
+      'Regression',
+      'CVaR',
+      'Sortino Ratio',
+    ],
+  },
+  {
+    name: 'Data Engineering & Big Data',
+    items: ['Apache Spark', 'PySpark', 'Kafka', 'ETL Pipelines', 'Hadoop', 'Hive'],
+  },
+  {
+    name: 'Cloud & MLOps',
+    items: ['AWS (S3, Redshift, Lambda, Glue, SageMaker)', 'Azure (ADF, Synapse)', 'MLflow', 'CI/CD'],
+  },
+  {
+    name: 'Visualization & BI',
+    items: ['Power BI', 'Tableau', 'Matplotlib', 'Seaborn', 'Plotly'],
   },
   {
     name: 'Databases',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Vector DB'],
+    items: ['PostgreSQL', 'MySQL', 'Snowflake', 'Neo4j'],
   },
   {
-    name: 'Tools',
-    items: ['Git', 'GitHub', 'n8n', 'JIRA', 'Tableau', 'Agile/Scrum', 'System Design'],
+    name: 'Model Explainability',
+    items: ['SHAP', 'LIME', 'PDP', 'Model Drift Detection', 'Fairness Auditing'],
+  },
+  {
+    name: 'Tools & Methodologies',
+    items: ['Git', 'JIRA', 'Confluence', 'Jupyter', 'VS Code', 'Agile / Scrum'],
   },
 ]
 

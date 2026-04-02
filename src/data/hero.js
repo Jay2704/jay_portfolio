@@ -1,14 +1,12 @@
-import umbcLogo from '../assets/UMBC.png'
-import bmsLogo from '../assets/BMS.svg'
-
 export const heroData = {
   name: 'Jay Paun',
-  title: 'Software Engineer / AI Developer',
+  title: 'Data Scientist',
+  subtitle: 'Machine learning, GenAI & MLOps',
   intro: "Hello, I'm",
-  tagline: 'I build reliable AI-powered products and full-stack systems.',
+  tagline: '',
   summary:
-    'I work across AI, backend, and modern web development to turn complex ideas into clean, production-ready applications. I focus on performance, usability, and business impact.',
-  badges: ['AI / ML', 'Full Stack', 'Cloud / DevOps', 'Open to Opportunities'],
+    'Data Scientist with 4+ years of experience building and deploying production-grade machine learning and GenAI solutions in financial services and enterprise consulting environments. At JPMorgan Chase, collaborated on credit risk, fraud detection, and NLP-driven compliance systems delivering over $22M in business impact and significant operational efficiency gains. Skilled across the end-to-end ML lifecycle, including model development, MLOps, and LLM-based systems (RAG, fine-tuning) on AWS and Azure, with a strong focus on scalable, interpretable, and business-aligned AI solutions.',
+  badges: ['ML & GenAI', 'MLOps', 'AWS & Azure', 'Financial Services'],
   ctas: [
     { label: 'Hire Me', to: '/contact', primary: true },
     { label: 'View Projects', to: '/projects', primary: false },
@@ -51,20 +49,3 @@ export const aboutStory = {
   ],
   approach: 'Understand the problem first. Build incrementally. Measure. Iterate. Ship production-ready code.',
 }
-
-export const education = [
-  {
-    degree: 'M.S. in Computer Science',
-    school: 'University of Maryland, Baltimore County (UMBC)',
-    location: 'Baltimore, MD',
-    duration: 'Aug 2023 – May 2025',
-    logo: umbcLogo,
-  },
-  {
-    degree: 'B.E. in Information Science',
-    school: 'B.M.S. College of Engineering (B.M.S.C.E)',
-    location: 'Bangalore, India',
-    duration: 'Aug 2018 – May 2022',
-    logo: bmsLogo,
-  },
-]

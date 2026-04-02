@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, MapPin, Calendar } from 'lucide-react'
+import { GraduationCap, MapPin, Award } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
-import { education } from '../data/hero'
+import { education, certifications } from '../data/education'
 
 export default function Education() {
   return (
@@ -16,7 +16,7 @@ export default function Education() {
           <div className="space-y-4">
             {education.map((edu, i) => (
               <motion.div
-                key={i}
+                key={`${edu.degree}-${edu.school}`}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -48,16 +48,41 @@ export default function Education() {
                         <MapPin size={14} />
                         {edu.location}
                       </span>
-                      <span className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1.5 text-sm text-[var(--color-text-muted)]">
-                        <Calendar size={14} />
-                        {edu.duration}
-                      </span>
                     </div>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding-sm border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)]/35">
+        <div className="site-container max-w-4xl">
+          <SectionHeader
+            title="Certifications"
+            subtitle="Professional learning and credentials."
+          />
+          <ul className="space-y-3" role="list">
+            {certifications.map((c, i) => (
+              <motion.li
+                key={`${c.title}-${c.issuer}`}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.06 }}
+                className="surface-card flex gap-3 p-4 md:p-5"
+              >
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-accent)]">
+                  <Award size={18} aria-hidden />
+                </span>
+                <div className="min-w-0">
+                  <p className="font-medium text-[var(--color-text)]">{c.title}</p>
+                  <p className="mt-1 text-sm text-[var(--color-text-muted)]">{c.issuer}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

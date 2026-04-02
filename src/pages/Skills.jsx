@@ -4,7 +4,7 @@ import { MessageSquareText, Brain, GraduationCap, Users, MessageCircleReply } fr
 import { skillCategories, softSkills } from '../data/skills'
 
 const categoryAccents = {
-  Languages: {
+  'Programming & Querying': {
     cardBg: 'bg-blue-50',
     cardBorder: 'border-blue-200',
     cardHoverBorder: 'hover:border-blue-300',
@@ -20,39 +20,7 @@ const categoryAccents = {
       hoverText: 'hover:text-blue-800',
     },
   },
-  Frontend: {
-    cardBg: 'bg-cyan-50',
-    cardBorder: 'border-cyan-200',
-    cardHoverBorder: 'hover:border-cyan-300',
-    titleClass: 'text-cyan-700',
-    accentBg: 'bg-cyan-100',
-    accentText: 'text-cyan-700',
-    badge: {
-      border: 'border-cyan-200',
-      bg: 'bg-cyan-100',
-      text: 'text-cyan-700',
-      hoverBorder: 'hover:border-cyan-300',
-      hoverBg: 'hover:bg-cyan-200/70',
-      hoverText: 'hover:text-cyan-800',
-    },
-  },
-  Backend: {
-    cardBg: 'bg-purple-50',
-    cardBorder: 'border-purple-200',
-    cardHoverBorder: 'hover:border-purple-300',
-    titleClass: 'text-purple-700',
-    accentBg: 'bg-purple-100',
-    accentText: 'text-purple-700',
-    badge: {
-      border: 'border-purple-200',
-      bg: 'bg-purple-100',
-      text: 'text-purple-700',
-      hoverBorder: 'hover:border-purple-300',
-      hoverBg: 'hover:bg-purple-200/70',
-      hoverText: 'hover:text-purple-800',
-    },
-  },
-  'AI / ML': {
+  'Machine Learning & AI': {
     cardBg: 'bg-violet-50',
     cardBorder: 'border-violet-200',
     cardHoverBorder: 'hover:border-violet-300',
@@ -68,7 +36,71 @@ const categoryAccents = {
       hoverText: 'hover:text-violet-800',
     },
   },
-  'Cloud / DevOps': {
+  'Generative AI & LLMs': {
+    cardBg: 'bg-indigo-50',
+    cardBorder: 'border-indigo-200',
+    cardHoverBorder: 'hover:border-indigo-300',
+    titleClass: 'text-indigo-700',
+    accentBg: 'bg-indigo-100',
+    accentText: 'text-indigo-700',
+    badge: {
+      border: 'border-indigo-200',
+      bg: 'bg-indigo-100',
+      text: 'text-indigo-700',
+      hoverBorder: 'hover:border-indigo-300',
+      hoverBg: 'hover:bg-indigo-200/70',
+      hoverText: 'hover:text-indigo-800',
+    },
+  },
+  'NLP & Time Series': {
+    cardBg: 'bg-cyan-50',
+    cardBorder: 'border-cyan-200',
+    cardHoverBorder: 'hover:border-cyan-300',
+    titleClass: 'text-cyan-700',
+    accentBg: 'bg-cyan-100',
+    accentText: 'text-cyan-700',
+    badge: {
+      border: 'border-cyan-200',
+      bg: 'bg-cyan-100',
+      text: 'text-cyan-700',
+      hoverBorder: 'hover:border-cyan-300',
+      hoverBg: 'hover:bg-cyan-200/70',
+      hoverText: 'hover:text-cyan-800',
+    },
+  },
+  'Statistical & Quant Modeling': {
+    cardBg: 'bg-rose-50',
+    cardBorder: 'border-rose-200',
+    cardHoverBorder: 'hover:border-rose-300',
+    titleClass: 'text-rose-700',
+    accentBg: 'bg-rose-100',
+    accentText: 'text-rose-700',
+    badge: {
+      border: 'border-rose-200',
+      bg: 'bg-rose-100',
+      text: 'text-rose-700',
+      hoverBorder: 'hover:border-rose-300',
+      hoverBg: 'hover:bg-rose-200/70',
+      hoverText: 'hover:text-rose-800',
+    },
+  },
+  'Data Engineering & Big Data': {
+    cardBg: 'bg-orange-50',
+    cardBorder: 'border-orange-200',
+    cardHoverBorder: 'hover:border-orange-300',
+    titleClass: 'text-orange-700',
+    accentBg: 'bg-orange-100',
+    accentText: 'text-orange-700',
+    badge: {
+      border: 'border-orange-200',
+      bg: 'bg-orange-100',
+      text: 'text-orange-700',
+      hoverBorder: 'hover:border-orange-300',
+      hoverBg: 'hover:bg-orange-200/70',
+      hoverText: 'hover:text-orange-800',
+    },
+  },
+  'Cloud & MLOps': {
     cardBg: 'bg-emerald-50',
     cardBorder: 'border-emerald-200',
     cardHoverBorder: 'hover:border-emerald-300',
@@ -82,6 +114,22 @@ const categoryAccents = {
       hoverBorder: 'hover:border-emerald-300',
       hoverBg: 'hover:bg-emerald-200/70',
       hoverText: 'hover:text-emerald-800',
+    },
+  },
+  'Visualization & BI': {
+    cardBg: 'bg-sky-50',
+    cardBorder: 'border-sky-200',
+    cardHoverBorder: 'hover:border-sky-300',
+    titleClass: 'text-sky-700',
+    accentBg: 'bg-sky-100',
+    accentText: 'text-sky-700',
+    badge: {
+      border: 'border-sky-200',
+      bg: 'bg-sky-100',
+      text: 'text-sky-700',
+      hoverBorder: 'hover:border-sky-300',
+      hoverBg: 'hover:bg-sky-200/70',
+      hoverText: 'hover:text-sky-800',
     },
   },
   Databases: {
@@ -100,7 +148,23 @@ const categoryAccents = {
       hoverText: 'hover:text-green-800',
     },
   },
-  Tools: {
+  'Model Explainability': {
+    cardBg: 'bg-fuchsia-50',
+    cardBorder: 'border-fuchsia-200',
+    cardHoverBorder: 'hover:border-fuchsia-300',
+    titleClass: 'text-fuchsia-700',
+    accentBg: 'bg-fuchsia-100',
+    accentText: 'text-fuchsia-700',
+    badge: {
+      border: 'border-fuchsia-200',
+      bg: 'bg-fuchsia-100',
+      text: 'text-fuchsia-700',
+      hoverBorder: 'hover:border-fuchsia-300',
+      hoverBg: 'hover:bg-fuchsia-200/70',
+      hoverText: 'hover:text-fuchsia-800',
+    },
+  },
+  'Tools & Methodologies': {
     cardBg: 'bg-amber-50',
     cardBorder: 'border-amber-200',
     cardHoverBorder: 'hover:border-amber-300',
@@ -132,7 +196,7 @@ export default function Skills() {
       <SectionHeader
         variant="compact"
         title="Skills"
-        subtitle="Technologies and tools I work with."
+        subtitle="Programming, machine learning, GenAI, data engineering, cloud, and tooling."
       />
       <section className="section-padding-sm">
         <div className="site-container">

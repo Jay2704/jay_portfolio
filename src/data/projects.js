@@ -33,28 +33,27 @@ export const projects = [
   },
   {
     slug: 'ai-log-agent',
-    title: 'AI Log Analysis Agent',
-    description: 'Designed an AI-powered log analysis agent using n8n and LLaMA to automatically parse logs, isolate stack traces, and predict anomalies.',
+    title: 'AI Debugging Agents System (Agentic AI)',
+    description:
+      'Engineered a production-grade multi-agent debugging system using LLaMA 3 fine-tuned with LoRA, Neo4j Knowledge Graphs, LangChain RAG pipelines, and a Vector Database (FAISS) to automate root-cause analysis from JIRA tickets and distributed log data across a 50K+ line codebase.',
     category: 'AI / ML',
     image: pp1,
-    techStack: ['Python', 'n8n', 'LLaMA', 'Embeddings', 'Automation'],
+    techStack: ['Python', 'GraphRAG', 'LLaMA', 'Neo4j', 'LangChain', 'Docker'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
-    overview: 'An intelligent, self-learning log analysis agent that leverages LLaMA and vector embeddings to automatically parse system logs, detect recurring error patterns, isolate stack traces, and predict anomalies across distributed systems. Built with n8n automation workflows for seamless integration into existing DevOps pipelines.',
-    problem: 'Manual log analysis in distributed systems is extremely time-consuming and error-prone. Engineers often spend hours sifting through thousands of log entries to identify root causes of failures. Traditional log monitoring tools rely on static rules that miss novel error patterns, leading to delayed incident response and increased system downtime.',
-    solution: 'Built an AI-powered agent that uses LLaMA for natural language understanding of log messages and vector embeddings for semantic similarity matching. The agent automatically categorizes logs by severity, isolates relevant stack traces, filters by timestamps and keywords, and identifies recurring error sequences. Self-learning workflows continuously improve pattern recognition based on resolved incidents.',
-    architecture: 'The system is orchestrated through n8n automation workflows that trigger on new log ingestion. Logs are processed through a LLaMA-based NLP pipeline for semantic parsing, then converted to vector embeddings stored in a vector database for similarity search. An anomaly detection module compares current patterns against historical baselines to predict potential failures before they cascade.',
+    overview:
+      'Engineered a production-grade multi-agent debugging system using LLaMA 3 fine-tuned with LoRA, Neo4j Knowledge Graphs, LangChain RAG pipelines, and a Vector Database (FAISS) to automate root-cause analysis from JIRA tickets and distributed log data across a 50K+ line codebase.',
+    problem:
+      'P1/P2 incidents across microservices and large monorepos force engineers to manually connect JIRA context, noisy logs, and code navigation—slowing MTTR and burning senior time. Single LLM prompts or static parsers cannot reliably trace failures through dependencies, historical tickets, and similar stack traces at scale.',
+    solution:
+      'Shipped an Agentic AI workflow: LoRA-adapted LLaMA 3 reasons over LangChain RAG (FAISS) and GraphRAG-style retrieval backed by Neo4j, ingesting JIRA and distributed logs to propose root causes and fixes with auditable chains. Containerised services (Docker) keep retrieval, graph, and model endpoints reproducible in production.',
+    architecture:
+      'Python services coordinate specialised agents (ingestion, parsing, vector search, graph expansion, codebase navigation, synthesis). Embeddings land in FAISS; entities and relationships feed Neo4j for structured hops alongside unstructured log similarity. LangChain orchestrates tool calls and memory; the stack runs containerised for consistent deploys.',
     features: [
-      'Automatic log parsing with LLaMA NLP',
-      'Stack trace isolation and error categorization',
-      'Timestamp and keyword-based filtering',
-      'Anomaly prediction using pattern recognition',
-      'Self-learning workflows that improve over time',
-      'Seamless n8n integration with existing DevOps tools',
-      'Vector embeddings for semantic log similarity',
-      'Support for multiple log formats (JSON, plaintext, syslog)',
+      'Formulated a 7-agent Agentic AI workflow (JIRA ingestion, log parsing, vector similarity search, codebase navigation, fix synthesis) that reduced mean time-to-resolution for P1/P2 incidents by 55% equivalent to recovering 18 engineering-hours per week while producing traceable reasoning chains auditable by senior engineers.',
     ],
-    challenges: 'Handling the diversity of log formats across different services and platforms required building flexible parsing adapters. Optimizing the embedding pipeline for real-time analysis while maintaining semantic accuracy was critical for production use. Additionally, tuning the anomaly detection thresholds to minimize false positives without missing genuine incidents required extensive experimentation with historical incident data.',
+    challenges:
+      'Keeping graph schema and chunking aligned with how engineers actually search code—without exploding Neo4j size—required iteration. Balancing latency across seven agents versus depth of analysis needed careful batching and caching. Ensuring every suggested fix carried enough trace context for senior review meant structured logging and replayable prompts, not only model fluency.',
   },
   {
     slug: 'astrovoyages',
@@ -83,28 +82,29 @@ export const projects = [
   },
   {
     slug: 'brain-tumor-detection',
-    title: 'Brain Tumor Detection using Deep Learning',
-    description: 'End-to-end medical AI application that detects brain tumor types from MRI scans using a VGG-based CNN, with a React frontend and cloud inference on Hugging Face.',
+    title:
+      'Transformer-Based Medical Image Classification | PyTorch, CNN, Vision Transformer, Flask, React',
+    description:
+      'Deep learning MRI classification combining CNN feature extraction and Vision Transformer attention in PyTorch; full-stack Flask + React clinical decision-support app with quantization and ONNX.',
     category: 'AI / ML',
     image: pp4,
-    techStack: ['React', 'TensorFlow', 'CNN (VGGNet)', 'Hugging Face Spaces', 'Gradio', 'Python'],
+    techStack: ['PyTorch', 'CNN', 'Vision Transformer', 'Flask', 'React', 'ONNX'],
     githubUrl: 'https://github.com/Jay2704/brain_tumor_detection',
     demoUrl: 'https://jay2704.github.io/brain_tumor_detection/',
-    overview: 'An end-to-end medical AI application that classifies brain tumors from MRI scans into four categories: Glioma, Meningioma, Pituitary tumor, or No Tumor. The system features a clean React frontend for image upload and visualization, with the deep learning model deployed on Hugging Face Spaces for scalable, accessible cloud inference.',
-    problem: 'Manual diagnosis of brain tumors from MRI scans requires specialized radiological expertise and is time-consuming, often leading to delays in treatment initiation. Access to expert radiologists is limited in many regions, and human fatigue can lead to diagnostic errors. There is a critical need for AI-assisted tools that can provide rapid, accurate preliminary tumor classification.',
-    solution: 'Developed a VGG-based convolutional neural network trained on a curated dataset of brain MRI images to classify tumors with high accuracy. The model is wrapped in a Gradio interface and deployed on Hugging Face Spaces, making it accessible to medical professionals without requiring local GPU resources. A React frontend provides an intuitive interface for image upload and result visualization with probability scores.',
-    architecture: 'The deep learning model uses a VGGNet architecture fine-tuned on brain MRI datasets using TensorFlow/Keras. Transfer learning from ImageNet weights accelerates training and improves generalization. The model is deployed as a Gradio app on Hugging Face Spaces, exposing a REST API. The React frontend communicates with this API, displaying classification results with probability distributions for each tumor type.',
+    overview:
+      'A transformer-based medical image classification system for brain MRI: CNN backbones supply spatial features, Vision Transformer layers model long-range dependencies, and the stack is trained end-to-end in PyTorch. The model is deployed behind a Flask API and a React UI as a clinical decision-support tool, with optimisation for latency and integration paths toward hospital workflows.',
+    problem:
+      'Radiologists need fast, reliable support when triaging brain MRI volumes, but generic CNN-only pipelines can miss global context while heavy transformers alone can be costly to run in clinical settings. Deploying research models into a usable web stack—with acceptable latency, traceability, and safeguards for sensitive imaging data—remains a barrier to adoption.',
+    solution:
+      'Built a hybrid CNN + Vision Transformer classifier in PyTorch on a 3,000-image MRI dataset spanning four classes (Glioma, Meningioma, Pituitary, None), reaching 94% accuracy. Reduced inference latency by 35% through quantisation and ONNX export. Wrapped inference in a Flask + React application delivering sub-2-second outputs, with design choices aimed at HIPAA-aligned handling and future PACS integration.',
+    architecture:
+      'PyTorch implements CNN feature extraction fused with ViT-style attention for slice- or image-level classification. Training uses standard medical-imaging augmentation; exported ONNX models support efficient deployment. Flask serves the inference API; React provides the operator-facing workflow. The architecture separates inference from storage so hospital systems can attach storage and identity policies appropriate to their environment.',
     features: [
-      'Upload MRI scans and receive instant tumor classification',
-      'Probability visualization showing confidence for each class',
-      'Cloud inference via Hugging Face Spaces (no local GPU needed)',
-      'VGG-based CNN trained on medical imaging datasets',
-      'Clean, responsive React UI for medical professionals',
-      'Support for common medical image formats',
-      'Classification into Glioma, Meningioma, Pituitary, or No Tumor',
-      'Fast inference times suitable for clinical workflow integration',
+      'Built a deep learning MRI classification system combining CNN feature extraction and Vision Transformer attention mechanisms in PyTorch, achieving 94% accuracy across 4 tumour classes (Glioma, Meningioma, Pituitary, None) on a 3,000-image dataset; optimised inference latency by 35% via model quantisation and ONNX export.',
+      'Deployed as a full-stack clinical decision-support web app (Flask + React) with sub-2-second diagnostic output; architecture supports HIPAA-aligned data handling and is designed for integration with hospital PACS systems.',
     ],
-    challenges: 'Medical imaging datasets often suffer from class imbalance, with some tumor types significantly underrepresented. Addressed this through weighted loss functions and augmentation strategies. Achieving high accuracy while maintaining fast inference times required careful model optimization. Additionally, ensuring the system provides appropriately calibrated confidence scores (not overconfident on edge cases) was critical for responsible medical AI deployment.',
+    challenges:
+      'Balancing ViT expressiveness with latency budgets required quantisation and ONNX deployment testing across hardware targets. Medical datasets needed careful splits to avoid leakage across slices from the same patient. Aligning the prototype with HIPAA-oriented practices and PACS-oriented integration points meant keeping clear boundaries between inference, audit logs, and image storage—areas that continue to evolve with deployment context.',
   },
   {
     slug: 'pybot-chatbot',
@@ -133,27 +133,28 @@ export const projects = [
   },
   {
     slug: 'llama-finetune-qlora',
-    title: 'Fine-Tuning LLaMA 2 with QLoRA',
-    description: 'Applied QLoRA techniques to fine-tune LLaMA 2–7B with 4-bit quantization, reducing GPU memory by 60% while preserving 95% task-specific accuracy.',
+    title:
+      'LLM Fine-Tuning & RAG Pipeline Engineering (GenAI Platform) | Python, LoRA/QLoRA, LangChain, FAISS, FastAPI',
+    description:
+      'QLoRA fine-tuning of LLaMA 2 7B on a 50K-record domain dataset with LangChain RAG over FAISS, FastAPI deployment, and evaluation pipelines—serving 500+ MAU at 99.2% uptime.',
     category: 'AI / ML',
     image: pp6,
-    techStack: ['Python', 'Hugging Face', 'Google Colab', 'QLoRA', 'LLaMA 2'],
+    techStack: ['Python', 'QLoRA', 'LLaMA 2', 'LangChain', 'FAISS', 'FastAPI'],
     githubUrl: 'https://github.com/Jay2704',
     demoUrl: null,
-    overview: 'A project demonstrating efficient fine-tuning of the LLaMA 2-7B large language model using QLoRA (Quantized Low-Rank Adaptation). By applying 4-bit quantization, the approach reduces GPU memory requirements by 60% while maintaining 95% of task-specific accuracy, enabling LLM customization on consumer-grade hardware.',
-    problem: 'Fine-tuning large language models like LLaMA 2-7B typically requires expensive enterprise GPUs with 40GB+ VRAM, making LLM customization inaccessible to most developers and researchers. Full fine-tuning is also slow and risks catastrophic forgetting of the model\'s general capabilities.',
-    solution: 'Applied QLoRA—a parameter-efficient fine-tuning technique that combines 4-bit quantization with Low-Rank Adapters. This approach freezes the base model weights in 4-bit precision and only trains small adapter layers, reducing memory footprint by 60% while preserving 95% of task-specific performance. The entire fine-tuning process runs on Google Colab\'s free T4 GPU.',
-    architecture: 'The pipeline uses Hugging Face Transformers for model loading, the PEFT (Parameter-Efficient Fine-Tuning) library for LoRA implementation, and bitsandbytes for 4-bit quantization. Training is orchestrated through a custom script that handles data preprocessing, adapter configuration, training loops with gradient checkpointing, and model merging for deployment. The final model can be exported to standard Hugging Face format.',
+    overview:
+      'A GenAI platform stack that combines parameter-efficient LLM fine-tuning with retrieval-augmented generation: LLaMA 2 7B adapted with QLoRA on proprietary domain data, exposed through FastAPI, with LangChain orchestrating retrieval against a FAISS vector store. Prompting, evaluation, and serving are treated as one system rather than isolated scripts.',
+    problem:
+      'Base LLMs hallucinate on niche domains and drift from organisational facts; naive fine-tuning alone does not ground answers in curated knowledge, and production GenAI needs reliable APIs, retrieval, and quality measurement—not only training loss curves.',
+    solution:
+      'Fine-tuned LLaMA 2 7B with QLoRA on a 50K-record proprietary dataset, cutting hallucination rate by 38% on held-out domain benchmarks versus the base model. Paired the adapter with a LangChain RAG layer over FAISS and shipped inference behind FastAPI. Added structured prompt patterns and automated eval (ROUGE, BERTScore, human preference) to tighten iteration loops, reaching 500+ monthly active users at 99.2% uptime.',
+    architecture:
+      'Training uses the Hugging Face / PEFT stack for QLoRA adapters; documents and chunks are embedded into FAISS for similarity search. LangChain chains handle retrieval, prompt assembly, and optional structured outputs. FastAPI wraps model and retriever endpoints for a clear service boundary suitable for client apps and monitoring.',
     features: [
-      '4-bit quantization reducing model size significantly',
-      '60% GPU memory reduction vs full fine-tuning',
-      '95% task-specific accuracy retention',
-      '40% faster iteration cycles for rapid prototyping',
-      'Runs on Google Colab free tier (T4 GPU)',
-      'Custom dataset support for domain adaptation',
-      'Hugging Face compatible model export',
-      'Gradient checkpointing for memory efficiency',
+      'Architected and fine-tuned a domain-specific LLM (LLaMA 2 7B) using QLoRA on a 50K-record proprietary dataset, reducing hallucination rate by 38% versus the base model on held-out domain benchmarks; deployed via FastAPI with a LangChain RAG orchestration layer backed by a FAISS Vector Database.',
+      'Implemented Prompt Engineering best practices (chain-of-thought, few-shot, structured output schemas) and automated evaluation pipelines (ROUGE, BERTScore, human preference scoring) to iteratively improve model output quality; system served 500+ monthly active users with 99.2% uptime.',
     ],
-    challenges: 'Balancing quantization precision with model accuracy required careful hyperparameter tuning—aggressive quantization improved memory efficiency but degraded output quality. Finding the optimal LoRA rank and alpha parameters for the target task involved systematic experimentation. Additionally, ensuring stable training with mixed-precision gradients and preventing numerical instabilities in 4-bit operations required specific optimizer configurations.',
+    challenges:
+      'Aligning retrieval chunking and embedding choices with domain jargon was critical for RAG quality; evaluation required balancing automatic metrics with human rubrics so improvements generalised. Operating FastAPI + vector DB + GPU inference under uptime SLAs meant health checks, backoff, and capacity planning—not only model accuracy.',
   },
 ]
