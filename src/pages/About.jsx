@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import SectionHeader from '../components/ui/SectionHeader'
 import { contactInfo } from '../data/contact'
-import hpeLogo from '../assets/hpe.avif'
-import ibmLogo from '../assets/IBM.svg'
 import githubIcon from '../assets/icons/github.svg'
 import leetcodeIcon from '../assets/leetcode.png'
 import codeforcesIcon from '../assets/codeforces.png'
@@ -13,7 +11,7 @@ export default function About() {
   const summaryParagraphs = [
     "I am a Software Engineer and AI researcher focused on building intelligent and scalable systems. My work combines machine learning, cloud infrastructure, and full stack development to create production ready applications that solve real world problems.",
     "My technical experience spans Python, JavaScript, React, Node.js, machine learning frameworks, and cloud platforms including AWS and Azure. I enjoy designing systems that integrate AI models with reliable backend architectures and modern user interfaces.",
-    "I have worked with organizations such as Hewlett Packard Enterprise and IBM where I contributed to improving infrastructure automation, cloud deployment workflows, and debugging tools for enterprise applications. These experiences strengthened my ability to build systems that are reliable, maintainable, and scalable.",
+    "I have worked with organizations such as JPMorgan Chase and Capgemini, where I have delivered end-to-end ML systems—from credit risk and fraud detection to demand forecasting and NLP pipelines—across AWS, Azure, and Snowflake. These experiences strengthened my ability to ship models that are measurable, governed, and aligned with business impact.",
     "Beyond technical development, I bring a leadership mindset to engineering. I focus on understanding problems deeply, collaborating across teams, and delivering solutions that create real impact. I enjoy taking ownership of projects from idea to deployment and continuously improving systems based on feedback and performance."
   ]
 
@@ -82,18 +80,16 @@ export default function About() {
                 Worked With
               </h3>
               <div className="mt-5 grid grid-cols-2 gap-3">
-                <img
-                  src={hpeLogo}
-                  alt="Hewlett Packard Enterprise"
-                  className="h-14 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-3 object-contain"
-                  loading="lazy"
-                />
-                <img
-                  src={ibmLogo}
-                  alt="IBM"
-                  className="h-14 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-3 object-contain"
-                  loading="lazy"
-                />
+                <div className="flex min-h-14 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-3 text-center">
+                  <span className="text-sm font-medium text-[var(--color-text)]">
+                    JPMorgan Chase
+                  </span>
+                </div>
+                <div className="flex min-h-14 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-3 text-center">
+                  <span className="text-sm font-medium text-[var(--color-text)]">
+                    Capgemini
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
