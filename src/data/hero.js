@@ -1,12 +1,12 @@
 export const heroData = {
   name: 'Jay Paun',
-  title: 'Data Scientist',
-  subtitle: 'Machine learning, GenAI & MLOps',
+  title: 'Full-Stack Developer & AI Engineer',
+  subtitle: 'AI systems, LLMs, and production web applications',
   intro: "Hello, I'm",
   tagline: '',
   summary:
-    'Data Scientist with 4+ years of experience building and deploying production-grade machine learning and GenAI solutions in financial services and enterprise consulting environments. At JPMorgan Chase, collaborated on credit risk, fraud detection, and NLP-driven compliance systems delivering over $22M in business impact and significant operational efficiency gains. Skilled across the end-to-end ML lifecycle, including model development, MLOps, and LLM-based systems (RAG, fine-tuning) on AWS and Azure, with a strong focus on scalable, interpretable, and business-aligned AI solutions.',
-  badges: ['ML & GenAI', 'MLOps', 'AWS & Azure', 'Financial Services'],
+    'Full-stack developer and AI engineer with experience in AI research and enterprise software. As an A.I. Researcher at the Brain–Machine Interface Lab at UMBC, I develop deep learning models for EEG signal analysis, emotion recognition, and multimodal brain-computer interface applications. At Hewlett Packard Enterprise (HPE), I automated AWS-to-GreenLake infrastructure migrations with Python and Ansible and built Jenkins CI/CD validation pipelines. At IBM, I built a Python and React enterprise log assessment platform for automated log analysis and incident diagnostics. I build end-to-end systems across React, Node.js, Python APIs, LLMs, and cloud deployments.',
+  badges: ['Full Stack', 'AI / ML', 'LLMs & Agents', 'Cloud & DevOps'],
   ctas: [
     { label: 'Hire Me', to: '/contact', primary: true },
     { label: 'View Projects', to: '/projects', primary: false },
@@ -37,15 +37,15 @@ export const strengths = [
 export const aboutStory = {
   headline: 'Background & approach',
   paragraphs: [
-    "I'm a software engineer and AI researcher with a Master's in Computer Science from UMBC. My work spans machine learning research, cloud infrastructure, and full-stack development—always with a focus on building systems that are reliable, scalable, and production-ready.",
-    "At UMBC, I developed a multimodal lie-detection system combining EEG signals and visual data, achieving 89% classification accuracy. At Hewlett Packard Enterprise and IBM, I automated infrastructure workflows, optimized AWS deployments, and built log analysis utilities that accelerated debugging for enterprise applications.",
-    "I approach engineering with a product mindset: understand the problem, ship incrementally, measure impact, and iterate. Whether it's fine-tuning LLMs with QLoRA, building AI-powered agents, or deploying containerized applications—I care about clarity, maintainability, and real-world results.",
+    "I'm a full-stack developer and AI engineer with a Master's in Computer Science from UMBC. My work spans machine learning research, cloud infrastructure, and end-to-end application development—always with a focus on systems that are reliable, scalable, and production-ready.",
+    'At UMBC’s Brain–Machine Interface Lab, I build multimodal deep learning systems for EEG and visual data, including deception detection and affective computing. At Hewlett Packard Enterprise, I automated AWS-to-GreenLake infrastructure with Python and Ansible; at IBM, I delivered a Python/React enterprise log assessment platform for incident diagnostics.',
+    'Across projects, I ship AI debugging agents with GraphRAG and LangChain, GenAI full-stack apps, and computer vision systems. I approach engineering with a product mindset: understand the problem, ship incrementally, measure impact, and iterate toward real-world results.',
   ],
   workOn: [
-    'AI/ML systems: LLMs, fine-tuning, embeddings, multimodal models',
-    'Cloud infrastructure: AWS, Docker, CI/CD, scalable deployments',
+    'AI/ML systems: multimodal models, LLMs, RAG, agentic workflows',
     'Full-stack applications: React, Node.js, Python APIs',
-    'Developer tools & automation workflows',
+    'Cloud infrastructure: AWS, Docker, CI/CD, automation',
+    'Developer tools & enterprise log analysis',
   ],
   approach: 'Understand the problem first. Build incrementally. Measure. Iterate. Ship production-ready code.',
 }

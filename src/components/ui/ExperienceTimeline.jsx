@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SkillBadge from './SkillBadge'
 
 export default function ExperienceTimeline({ experiences }) {
   return (
@@ -45,6 +46,13 @@ export default function ExperienceTimeline({ experiences }) {
                     </li>
                   ))}
                 </ul>
+                {exp.technologies?.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+                    {exp.technologies.map((tech) => (
+                      <SkillBadge key={tech} label={tech} small />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </motion.li>

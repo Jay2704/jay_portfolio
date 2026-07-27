@@ -69,15 +69,20 @@ export default function About() {
               <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
                 Worked With
               </h3>
-              <div className="mt-5 grid grid-cols-2 gap-3">
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div className="flex min-h-14 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-3 text-center">
                   <span className="text-sm font-medium text-[var(--color-text)]">
-                    JPMorgan Chase
+                    Brain–Machine Interface Lab
                   </span>
                 </div>
                 <div className="flex min-h-14 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-3 text-center">
                   <span className="text-sm font-medium text-[var(--color-text)]">
-                    Capgemini
+                    HPE
+                  </span>
+                </div>
+                <div className="flex min-h-14 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-3 text-center">
+                  <span className="text-sm font-medium text-[var(--color-text)]">
+                    IBM
                   </span>
                 </div>
               </div>

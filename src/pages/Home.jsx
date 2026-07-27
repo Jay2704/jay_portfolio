@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, FileText } from 'lucide-react'
 import PremiumHero from '../components/ui/PremiumHero'
 import SectionHeader from '../components/ui/SectionHeader'
 import ProjectCard from '../components/ui/ProjectCard'
@@ -9,6 +9,7 @@ import CTASection from '../components/ui/CTASection'
 import { projects } from '../data/projects'
 import { stats, strengths } from '../data/hero'
 import { experiences } from '../data/experience'
+import { publications } from '../data/publications'
 import { codingProfiles } from '../data/contact'
 import profileImg from '../assets/jay.jpg'
 
@@ -54,7 +55,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding" id="featured">
+      <section className="section-padding" id="publications">
+        <div className="site-container">
+          <SectionHeader
+            title="Paper Publication"
+            subtitle="Peer-reviewed research in EEG deep learning and brain–computer interfaces."
+          />
+          <ul className="space-y-4" role="list">
+            {publications.map((paper, i) => (
+              <motion.li
+                key={paper.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.08 }}
+                className="surface-card surface-card-hover p-5 md:p-6"
+              >
+                <article>
+                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                    <div
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-accent)]"
+                      aria-hidden
+                    >
+                      <FileText size={22} />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div className="min-w-0 max-w-3xl">
+                          <h3 className="text-lg font-semibold leading-snug text-[var(--color-text)] md:text-xl">
+                            {paper.title}
+                          </h3>
+                          <p className="mt-2 text-sm text-[var(--color-text-muted)]">{paper.authors}</p>
+                          <p className="mt-2 text-sm text-[var(--color-accent)]">
+                            {paper.venue} ({paper.publisher}) · {paper.volumeIssue} · {paper.publishedDate}
+                          </p>
+                        </div>
+                        <span className="rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1 text-xs font-medium text-[var(--color-text-muted)]">
+                          {paper.year}
+                        </span>
+                      </div>
+                      <p className="mt-4 border-t border-[var(--color-border)] pt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                        {paper.summary}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {paper.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-[#dbe5ed] bg-[#f8fbfd] px-3 py-1 text-xs font-medium text-[var(--color-text-muted)]"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="mt-5">
+                        <a
+                          href={paper.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-secondary inline-flex items-center gap-2 no-underline"
+                        >
+                          Read on MDPI <ExternalLink size={14} aria-hidden />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section-padding border-t border-[var(--color-border)]" id="featured">
         <div className="site-container">
           <SectionHeader
             title="Featured projects"
