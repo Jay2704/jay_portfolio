@@ -1,6 +1,6 @@
-# AI Portfolio — React
+# Jay Paun — Portfolio
 
-A minimal, dark-themed React portfolio for a Software Developer & AI Engineer. Built with Vite, React Router, Tailwind CSS, and Framer Motion.
+A minimal React portfolio for a Full-Stack Developer & AI Engineer. Built with Vite, React Router, Tailwind CSS, and Framer Motion.
 
 ## Stack
 
@@ -24,31 +24,12 @@ npm run build
 npm run preview
 ```
 
-## Git & GitHub
-
-Initialize and make the first commit:
-
-```bash
-git init
-git add .
-git commit -m "Initial React portfolio setup"
-```
-
-Then create a new repository on GitHub and connect it:
-
-```bash
-git remote add origin <your-repo-url>
-git branch -M main
-git push -u origin main
-```
-
 ## Project structure
 
 - `src/components/layout/` — Navbar, Footer, Layout
 - `src/components/ui/` — Reusable UI (ProjectCard, SkillBadge, SectionHeader, etc.)
-- `src/components/sections/` — (optional) section blocks
-- `src/pages/` — Route pages (Home, About, Experience, Projects, Skills, Contact)
-- `src/data/` — projects.js, skills.js, experience.js, navigation.js, contact.js
+- `src/pages/` — Route pages (Home, About, Experience, Projects, Skills, Education, Contact)
+- `src/data/` — projects, skills, experience, publications, hero, education, contact, navigation
 - `src/hooks/` — useScrollReveal, useActiveSection
 - `src/routes/` — Router setup
 - `src/styles/` — Global CSS
@@ -57,18 +38,19 @@ git push -u origin main
 
 | Path | Page |
 |------|------|
-| `/` | Home |
+| `/` | Home (hero, coding profiles, publication, featured projects) |
 | `/about` | About |
 | `/experience` | Work experience (timeline) |
 | `/projects` | Projects (with category filter) |
 | `/projects/:slug` | Project detail |
 | `/skills` | Skills by category |
+| `/education` | Education & certifications |
 | `/contact` | Contact info + form |
 
 ## Customization
 
-- **Profile photo:** Replace `src/assets/profile.jpg` with your own image (same path). The hero uses it in the premium profile card.
-- **Hero & about:** Edit `src/data/hero.js` (name, tagline, summary, badges, CTAs, stats, strengths, about story).
-- **Content:** Edit `src/data/` (projects, skills, experience, contact, navigation).
-- **Theme:** Colors are in `src/index.css` under `@theme` (Tailwind v4). Use `--color-accent-glow` for soft glows.
-- **Resume:** Add `public/resume.pdf` and ensure `resumeUrl` in `src/data/navigation.js` (and hero CTAs) points to it.
+- **Profile photo:** Replace `src/assets/jay.jpg` with your own image (same path).
+- **Hero & about:** Edit `src/data/hero.js` (name, title, summary, badges, CTAs, stats, strengths).
+- **Content:** Edit `src/data/` (projects, skills, experience, publications, education, contact, navigation).
+- **Theme:** Colors are in `src/index.css` under `@theme` (Tailwind v4).
+- **Resume:** Update `resumeUrl` in `src/data/navigation.js`.
