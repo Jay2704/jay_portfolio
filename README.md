@@ -1,14 +1,24 @@
 # Jay Paun — Portfolio
 
-A minimal React portfolio for a Full-Stack Developer & AI Engineer. Built with Vite, React Router, Tailwind CSS, and Framer Motion.
+Personal portfolio for a **Full-Stack Developer & AI Engineer**. Showcases experience, projects, skills, education, and peer-reviewed research.
+
+**Live repo:** [github.com/Jay2704/jay_portfolio](https://github.com/Jay2704/jay_portfolio)
+
+## Highlights
+
+- A.I. Researcher at the Brain–Machine Interface Lab (UMBC)
+- Software Engineer experience at HPE and IBM
+- Co-authored paper in *Sensors* (MDPI): [EEG classification with CNN–Transformer & Inception](https://www.mdpi.com/1424-8220/26/14/4636)
+- Projects across AI/ML, full-stack apps, and developer tools
 
 ## Stack
 
-- **React** (Vite)
+- **React 19** + **Vite 8**
 - **React Router DOM** — multi-page routing
-- **Tailwind CSS** — styling (v4, PostCSS)
+- **Tailwind CSS v4** — styling (PostCSS)
 - **Framer Motion** — animations
 - **Lucide React** — icons
+- **Vercel** — SPA rewrites for client-side routing
 
 ## Setup
 
@@ -17,31 +27,48 @@ npm install
 npm run dev
 ```
 
-Build for production:
+Other scripts:
 
 ```bash
-npm run build
-npm run preview
+npm run build    # production build
+npm run preview  # preview production build
+npm run lint     # ESLint
 ```
 
 ## Project structure
 
-- `src/components/layout/` — Navbar, Footer, Layout
-- `src/components/ui/` — Reusable UI (ProjectCard, SkillBadge, SectionHeader, etc.)
-- `src/pages/` — Route pages (Home, About, Experience, Projects, Skills, Education, Contact)
-- `src/data/` — projects, skills, experience, publications, hero, education, contact, navigation
-- `src/hooks/` — useScrollReveal, useActiveSection
-- `src/routes/` — Router setup
-- `src/styles/` — Global CSS
+```
+src/
+  components/layout/   # Navbar, Footer, Layout
+  components/ui/       # Cards, badges, hero, timeline, etc.
+  data/                # Content (edit these to update the site)
+  hooks/               # useScrollReveal, useActiveSection
+  pages/               # Route pages
+  routes/              # Router setup
+  styles/              # Global CSS
+```
+
+### Content files (`src/data/`)
+
+| File | Purpose |
+|------|---------|
+| `hero.js` | Name, title, summary, badges, stats, strengths |
+| `experience.js` | Work experience timeline |
+| `projects.js` | Projects + detail pages |
+| `skills.js` | Skill categories + soft skills |
+| `publications.js` | Paper publication(s) |
+| `education.js` | Degrees + certifications |
+| `contact.js` | Contact info + coding profiles |
+| `navigation.js` | Nav links + resume URL |
 
 ## Routes
 
 | Path | Page |
 |------|------|
-| `/` | Home (hero, coding profiles, publication, featured projects) |
-| `/about` | About |
-| `/experience` | Work experience (timeline) |
-| `/projects` | Projects (with category filter) |
+| `/` | Home — hero, coding profiles, publication, featured projects |
+| `/about` | Professional summary + coding profiles |
+| `/experience` | Work experience timeline |
+| `/projects` | Projects with category filter |
 | `/projects/:slug` | Project detail |
 | `/skills` | Skills by category |
 | `/education` | Education & certifications |
@@ -49,8 +76,7 @@ npm run preview
 
 ## Customization
 
-- **Profile photo:** Replace `src/assets/jay.jpg` with your own image (same path).
-- **Hero & about:** Edit `src/data/hero.js` (name, title, summary, badges, CTAs, stats, strengths).
-- **Content:** Edit `src/data/` (projects, skills, experience, publications, education, contact, navigation).
-- **Theme:** Colors are in `src/index.css` under `@theme` (Tailwind v4).
-- **Resume:** Update `resumeUrl` in `src/data/navigation.js`.
+- **Profile photo:** `src/assets/jay.jpg`
+- **Theme colors:** `src/index.css` (`@theme` / CSS variables)
+- **Resume link:** `resumeUrl` in `src/data/navigation.js`
+- **All copy:** files under `src/data/`
