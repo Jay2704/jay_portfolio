@@ -80,3 +80,10 @@ src/
 - **Theme colors:** `src/index.css` (`@theme` / CSS variables)
 - **Resume link:** `resumeUrl` in `src/data/navigation.js`
 - **All copy:** files under `src/data/`
+
+## Maintenance
+
+- Update portfolio content in `src/data/` before changing page components.
+- Run `npm run lint` after content or component changes.
+- Run `npm run build` before deploying to confirm the Vite bundle compiles.
+- Keep `vercel.json` in place so direct visits to nested routes load the SPA correctly.
